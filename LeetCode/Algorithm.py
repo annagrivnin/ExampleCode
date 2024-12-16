@@ -1,4 +1,4 @@
-def lengthOfLongestSubstring(s):
+def length_of_longest_substring(s):
     """
     :type s: str
     :rtype: int
@@ -21,7 +21,7 @@ def lengthOfLongestSubstring(s):
     return max_length
 
 
-def largestRectangleArea( heights):
+def largest_rectangle_area(heights):
     """
     :type heights: List[int]
     :rtype: int
@@ -38,5 +38,21 @@ def largestRectangleArea( heights):
     heights.pop()
     return ans
 
+def my_sqrt( x):
+    """
+    :type x: int
+    :rtype: int
+    """
+    min_num = 0
+    max_num = x
+    while min_num <= max_num:
+        mid = (min_num + max_num) // 2
+        if mid * mid < x:
+            min_num = mid + 1
+        elif mid * mid > x:
+            max_num = mid - 1
+        else:
+            return mid
+    return max_num
 
-print(largestRectangleArea([0,9,9]))
+print(largest_rectangle_area([0, 9, 9]))
